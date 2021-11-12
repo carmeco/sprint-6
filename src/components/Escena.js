@@ -1,14 +1,34 @@
 import React from "react";
-import { Grid, GridElement, Wrapper } from "./Escena.styles";
+import { Wrapper, SentecesBox, Sentece, Btn, BtnBox } from "./Escena.styles";
+import { useState } from "react";
 
 const Escena = ({ frases }) => {
+    const [count, setCount] = useState(0);
+
     return (
         <Wrapper>
-            <Grid>
+            <SentecesBox>
                 {frases.map((frase) => (
-                    <GridElement>{frase}</GridElement>
+                    <Sentece
+                        key={frase.id}
+                        featured={frase.id === count ? true : false}
+                    >
+                        {frase.text}
+                    </Sentece>
                 ))}
-            </Grid>
+            </SentecesBox>
+            <BtnBox>
+                <Btn onClick={() => setCount(count > 0 ? count - 1 : count)}>
+                    Anterior
+                </Btn>
+                <Btn
+                    onClick={() =>
+                        setCount(count < frases.length - 1 ? count + 1 : count)
+                    }
+                >
+                    Següent
+                </Btn>
+            </BtnBox>
         </Wrapper>
     );
 };
