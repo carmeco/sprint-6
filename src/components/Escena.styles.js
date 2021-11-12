@@ -21,7 +21,7 @@ export const Sentece = styled.p`
     padding: 0.6rem;
     border: 1px solid var(--darkGrey);
     border-radius: 1rem;
-    background-color: ${({ featured }) => (featured ? "#ffc0cb" : "white")};
+    background-color: ${({ featured }) => (featured ? "orange" : "white")};
 `;
 
 export const BtnBox = styled.div`
