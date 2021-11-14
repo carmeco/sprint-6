@@ -1,7 +1,7 @@
 import react, { useState } from "react";
 import Home from "./components/Home";
 import Escena from "./components/Escena";
-import frases from "./data/frases.json";
+import frases from "./data/frases.js";
 
 function App() {
     const [state, setState] = useState(true);

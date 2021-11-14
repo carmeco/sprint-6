@@ -6,12 +6,12 @@ const Escena = ({ frases }) => {
     const [count, setCount] = useState(0);
 
     return (
-        <Wrapper>
+        <Wrapper background={frases[count].image}>
             <SentecesBox>
-                {frases.map((frase) => (
+                {frases.map((frase, index) => (
                     <Sentece
-                        key={frase.id}
-                        featured={frase.id === count ? true : false}
+                        key={index}
+                        featured={index === count ? true : false}
                     >
                         {frase.text}
                     </Sentece>

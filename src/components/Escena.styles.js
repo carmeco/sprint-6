@@ -7,8 +7,11 @@ const grid = css`
 `;
 
 export const Wrapper = styled.div`
-    max-width: var(--maxWidth);
-    margin: 2rem auto;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    background-image: ${({ background }) => `url(${background})`};
 `;
 
 export const SentecesBox = styled.div`
